@@ -15,19 +15,17 @@ goodchannels(j,1) = data.SpikeChannels(spikechan(j,:)); %creates struct of chann
 end
 %%
 %Add spike timestamps for Unit As
-UnitAspikets = cell(30,1);
+
 for i = 1:length(goodchannels);
-UnitAspikets{i,:} = PL2Ts(datafile,goodchannels{i,1}.Name,1); %creates a cell with Unit A spike ts
+UnitAspikets{i} = PL2Ts(datafile,goodchannels{i,1}.Name,1); %creates a cell with Unit A spike ts
 end
 %%
 %Add spike timestamps for Unit Bs
-UnitBspikets = cell(30,1);
 for i = 1:length(goodchannels);
-UnitBspikets{i,:} = PL2Ts(datafile,goodchannels{i,1}.Name,2); %creates a cell with Unit B spike ts
+UnitBspikets{i} = PL2Ts(datafile,goodchannels{i,1}.Name,2); %creates a cell with Unit B spike ts
 end
 %%
 %Add spike timestamps for Unit Cs
-UnitCspikets = cell(30,1);
 for i = 1:length(goodchannels);
-UnitCspikets{i,:} = PL2Ts(datafile,goodchannels{i,1}.Name,3); %creates a cell with Unit C spike ts
+UnitCspikets{i} = PL2Ts(datafile,goodchannels{i,1}.Name,3); %creates a cell with Unit C spike ts
 end
