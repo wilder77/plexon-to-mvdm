@@ -10,13 +10,14 @@ numRep = str2double(params{1});
 for Reps = 1:numRep
     [datafile,path] = uigetfile('D:\PlexonData\FerretCGdata'); % on Briggs lab data computer, can be changed to local data repository
     cd (path);
-    
+    for l = 1:numRep
         data = PL2GetFileIndex(datafile);
+  
         
         %%
         %Find channels with sorted units
         for k = 1:length(data.SpikeChannels)
-            spikechan(k,1) = data.SpikeChannels{k,1}.NumberOfUnits > 0; %Integrity check: Makes sure spikes are from pre-sorted, optimized units
+            spikechan(k,1) = data.SpikeChannels{k,1}.NumberOfUnits > 0;
         end
         spikechan = find(spikechan); %creates an index to find channels with sorted units within larger data struct (named "data")
         for j = 1:length(spikechan)
@@ -31,6 +32,6 @@ for Reps = 1:numRep
             Spk(1).label{i} = datafile;
             Spk(1).cfg{i} = goodchannels{i};
         end
-    
+    end
    
 end
