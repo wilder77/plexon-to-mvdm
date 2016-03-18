@@ -22,4 +22,3 @@ Pl2tomvdmPSTH:
 This program calls the previous two functions and plots an LED pulse PSTH for each unit of interest.
 
 
-(Pl2tomvdm is Wilder’s code, we’re sharing a repository since he’s interested in sharing code. He was appreciative of the feedback from last time though!)
